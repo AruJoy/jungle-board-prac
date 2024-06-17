@@ -36,6 +36,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
                 .antMatchers("/api/user/signup").permitAll() // sign-up API는 인증 없이 접근 가능
+                .antMatchers("/api/user/login").permitAll() // sign-up API는 인증 없이 접근 가능
                 .antMatchers(HttpMethod.GET, "/api/posts").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/post/{id}").permitAll()
                 .anyRequest().authenticated()
